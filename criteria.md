@@ -51,61 +51,43 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy
 
-<!-- Your criterion. It must name a number. -->
+Across each of the three held-out runs, overall accuracy is at least **0.60**.
 
-
-
-**Why this target:**
-
-
+**Why this target:** The project distinguishes four labels, so a uniform random guess would be right about 0.25 of the time. 0.60 is a meaningful improvement while leaving room for overlap between discussion and opinion, and information and stats/analytics.
 
 ---
 
-## 2.
+## 2. Per-label performance
 
-<!-- Your criterion. -->
+Across each of the three held-out runs, each label has an F1 score of at least **0.45**.
 
-
-
-**Why this target:**
-
-
+**Why this target:** The current `labels.csv` has only 19 posts, with some labels represented just three times. That makes per-label scores noisy, so 0.45 is a cautious floor; the dataset needs to grow before a strict F1 target is dependable.
 
 ---
 
-## 3.
+## 3. Label balance
 
-<!-- Your criterion. -->
+Before training, each label must make up at least **15%** and no more than **40%** of the labelled posts.
 
-
-
-**Why this target:**
-
-
+**Why this target:** With four labels, perfectly even data would be 25% each. A 15% floor prevents the smallest category from being too rare to learn, while the 40% cap stops one category from dominating.
 
 ---
 
-## 4.
+## 4. Model consistency across runs
 
-<!-- Your criterion. -->
+Across the three seeded runs, the range between the highest and lowest held-out accuracy must be no more than **0.10** (10 percentage points).
 
-
-
-**Why this target:**
-
-
+**Why this target:** The notebook trains and evaluates the model three times with different seeds and reports the accuracy spread. A maximum ten-point swing is a practical stability check: it means the result is not changing drastically with the run. With the current small dataset, larger swings may point to too few examples or unstable splits, rather than a dependable model result.
 
 ---
 
-## 5.
+## 5. Confidence
 
-<!-- Your criterion. -->
+Across each held-out run, accuracy on the most confident third of predictions must be at least **0.10 higher** than accuracy on the least confident third.
 
-
-
-**Why this target:**
+**Why this target:** A confidence score is useful only if it separates safer predictions from uncertain ones. A ten-point gap is large enough to matter for deciding which posts need human review, without requiring the model to be perfectly calibrated.
 
 
 

@@ -5,6 +5,8 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+
+information: a neutral argument conveying certain news.
+stats and analytics: posts backed by facts,numbers and figures.
+discussion: questions on a specific topic, looking for definite answers.
+opinion: a subjective claim with no direct evidence.
