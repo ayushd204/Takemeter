@@ -39,50 +39,67 @@
 
 ## What This Does
 
-<!-- Your community, and what your classifier sorts posts into. Three or four
-     sentences. -->
-
-
+This project is about football posts and how they communicate. TakeMeter is
+intended to sort them into `information`, `stats and analytics`, `discussion`,
+and `opinion`. The labels distinguish news, evidence or figures, questions,
+and subjective claims.
 
 ---
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
+<!-- Definitions are copied from label_definitions.txt. Examples are from
+     labels.csv. -->
 
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
+### `information`
 
-### `label_one`
-
-**Definition:**
+**Definition:** A neutral argument conveying certain news.
 
 **Example 1:**
->
+> “Anthony Taylor has been appointed as the chairman of the Central Referee Board of the Turkish Football Federation.”
 
 **Example 2:**
->
+> “Manchester City have been found guilty on all but one of the 115 charges, according to sources briefed on the matter.”
 
-### `label_two`
+### `stats and analytics`
 
-**Definition:**
+**Definition:** Posts backed by facts, numbers and figures.
 
 **Example 1:**
->
+> “Harry Kane has now scored 102 goals in his first 100 Bundesliga appearances.”
 
 **Example 2:**
->
+> “Barcelona have won their first 9 LaLiga games for only the second time in competition history.”
+
+### `discussion`
+
+**Definition:** Questions on a specific topic, looking for definite answers.
+
+**Example 1:**
+> “When did Ronaldo's form notably decline? Was it the Euros 2024?”
+
+**Example 2:**
+> “Would you rather your club loan a young player out or keep them training with the first team?”
+
+### `opinion`
+
+**Definition:** A subjective claim with no direct evidence.
+
+**Example 1:**
+> “Upamecano is nowhere near Pacho and neither are Gabriel and Saliba.”
+
+**Example 2:**
+> “Lamine Yamal is THE superstar of futbol.”
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `information` and `stats and analytics`
 
-**The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
-
-
+**The decision rule I used every time:** The boundary is not fully resolved in
+the current definitions: news can include numbers, and stats posts can report
+news. As a provisional rule, I use `stats and analytics` when the post's main
+point is its figures or comparison; I use `information` when it primarily
+announces an event or development.
 
 ---
 
@@ -91,7 +108,7 @@
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** Multiple subreddit communities like r/football,r/SpicyFootballTakes,r/Referees.
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
@@ -111,25 +128,25 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* “Barcelona have won their first 9 LaLiga games for only the second time in competition history. Barcelona’s start to the 2026/27 LaLiga season: 9 games, 9 wins, 39 goals scored, 9 conceded.”
 >
-> *Could have been:*
+> *Could have been:* `information` or `stats and analytics`
 >
-> *I chose, because:*
+> *I chose, because:* `stats and analytics`; the record and figures are the main point.
 
 **2.**
-> *The post:*
+> *The post:* “Would you rather your club loan a young player out or keep them training with the first team?”
 >
-> *Could have been:*
+> *Could have been:* `discussion` or `opinion`
 >
-> *I chose, because:*
+> *I chose, because:* It asks readers to answer a specific question, so I labelled it `discussion`.
 
 **3.**
-> *The post:*
+> *The post:* “Lamine Yamal is THE superstar of futbol, then they have half the world cup winning squad.”
 >
-> *Could have been:*
+> *Could have been:* `opinion` or `information`
 >
-> *I chose, because:*
+> *I chose, because:* It is a subjective evaluation without evidence, so I labelled it `opinion`.
 
 ---
 
