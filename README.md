@@ -235,12 +235,13 @@ it did not create the narratives or choose their classifier labels.
 
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+I did predict that the overall accuracy of the model has to be increased with fine tuning of the model.
 
 **What the gap actually means:**
 
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-
+The gap means that there is some improvement in the model.
 ---
 
 ## Run Log — Before
@@ -250,11 +251,11 @@ it did not create the narratives or choose their classifier labels.
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 | --------- | ------ | ------- | ------ | --------- | ------- |
-| 1.        |        |         |        |           |         |
-| 2.        |        |         |        |           |         |
-| 3.        |        |         |        |           |         |
-| 4.        |        |         |        |           |         |
-| 5.        |        |         |        |           |         |
+| 1. Overall accuracy | ≥ 0.60 each run | 0.750 | 0.719 | 0.719 | MET |
+| 2. Every label F1 | ≥ 0.45 each label and run | Lowest: 0.222 (`opinion`) | Lowest: 0.222 (`opinion`) | Lowest: 0.000 (`opinion`) | MISSED |
+| 3. Label balance | Each label 15%–40% before training | 23.3%–27.6% | 23.3%–27.6% | 23.3%–27.6% | MET |
+| 4. Accuracy consistency | Accuracy range ≤ 0.10 | 0.750 | 0.719 | 0.719 | MET |
+| 5. Confidence separation | Most confident third ≥ 0.10 above least confident third | 1.000 vs 0.200 (gap 0.800) | 1.000 vs 0.300 (gap 0.700) | 1.000 vs 0.300 (gap 0.700) | MET |
 
 ### Confusion matrix
 
@@ -285,11 +286,11 @@ it did not create the narratives or choose their classifier labels.
 
 | #   | Criterion | Target | Verdict | How I decided |
 | --- | --------- | ------ | ------- | ------------- |
-| 1   |           |        |         |               |
-| 2   |           |        |         |               |
-| 3   |           |        |         |               |
-| 4   |           |        |         |               |
-| 5   |           |        |         |               |
+| 1 | Overall accuracy | ≥ 0.60 on each run | MET | 0.750, 0.719, and 0.719 all meet the 0.60 floor. |
+| 2 | Every label F1 | ≥ 0.45 for every label on each run | MISSED | `opinion` F1 was 0.222, 0.222, and 0.000, below 0.45 in all three runs. |
+| 3 | Label balance | Every label is 15%–40% of the training set | MET | The four label shares are 24.8%, 23.3%, 27.6%, and 24.3%; all are within range. |
+| 4 | Accuracy consistency | Highest–lowest accuracy range ≤ 0.10 | MET | The range is 0.750 − 0.719 = 0.031, within the 0.10 limit. |
+| 5 | Confidence separation | Most confident third is ≥ 0.10 more accurate than least confident third in every run | MET | The accuracy gaps are 0.800, 0.700, and 0.700, each above 0.10. |
 
 **Diagnoses**
 
@@ -301,6 +302,8 @@ it did not create the narratives or choose their classifier labels.
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+- **Per-label F1 — MISSED:** `opinion` has 51 of 210 training examples (24.3%), so it is not the smallest or underrepresented label in the training set. Its F1 is 0.222, 0.222, and 0.000 across the seeds. The confusion matrices show the same pattern: true `opinion` posts were predicted as `discussion` 6, 1, and 5 times and as `stats and analytics` 0, 6, and 3 times (seeds 42, 7, and 2024). That repeated confusion points to a difficult `opinion` boundary, and suggests the model has not learned it reliably from these 210 examples. The agreement report files are not present, so I cannot tell from this evidence whether inconsistent training labels also contributed.
 
 ---
 
