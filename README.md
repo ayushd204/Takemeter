@@ -156,15 +156,18 @@ marked `pre-labelled, checked`.
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased`
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** 3 epochs, learning rate `2e-5`, batch size 16, seed 42.
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** I used the notebook's
+configured settings.
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:** The notebook uses stratified 70% / 15% / 15% train,
+validation, and test splits. The saved test split has 32 posts: 8
+`information`, 7 `stats and analytics`, 9 `discussion`, and 8 `opinion`.
+The `stats and analytics` test group has fewer than 8 examples, so its score
+may vary more from run to run.
 
 
 
@@ -181,17 +184,22 @@ of next unit's variance. -->
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Fill the note field in `labels.csv` with `pre-labelled, checked` for the posts other than manually labeled.
+- *What came back:* The CSV notes were updated to follow that instruction;
+  the narratives and classifier labels were kept as provided.
+- *What I changed:* I reviewed the note counts and kept the requested split:
+  33 `cold` and 177 `pre-labelled, checked`.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* format  the README using the files already in
+  the project, while preserving its existing structure and most of its text.
+- *What came back:* A well structured readme.
+- *What I changed:* Manully formatted the tables for better structure.
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** The notes record 33 posts as `cold` and 177 as
+`pre-labelled, checked`. AI helped apply these note values at my direction;
+it did not create the narratives or choose their classifier labels.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
