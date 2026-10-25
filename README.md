@@ -365,19 +365,25 @@ The gap means that there is some improvement in the model.
 
 **What I changed:**
 
+I added 50 `opinions` posts to `labels.csv`. This raised the opinion examples from 51 to 101 of 260 total (38.8%), still within the 15%–40% balance target but close to its upper limit.
+
 **Which diagnosis pointed at it:**
+
+The before-run diagnosis showed that `opinion` had only 51 training examples and was repeatedly confused with `discussion` or `stats and analytics`, so I added more opinion examples to address the limited examples for that label.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 | --------- | ------ | ------- | ------ | --------- | ------- |
-| 1.        |        |         |        |           |         |
-| 2.        |        |         |        |           |         |
-| 3.        |        |         |        |           |         |
-| 4.        |        |         |        |           |         |
-| 5.        |        |         |        |           |         |
+| 1. Overall accuracy | ≥ 0.60 each run | 0.769 | 0.667 | 0.795 | MET |
+| 2. Every label F1 | ≥ 0.45 for every label on each run | Lowest: 0.200 (`discussion`) | Lowest: 0.200 (`discussion`) | Lowest: 0.714 (`discussion`) | MISSED |
+| 3. Label balance | Every label 15%–40% of training set | 18.8%–38.8% | 18.8%–38.8% | 18.8%–38.8% | MET |
+| 4. Accuracy consistency | Accuracy range ≤ 0.10 | 0.769 | 0.667 | 0.795 | MISSED |
+| 5. Confidence separation | Most confident third ≥ 0.10 above least confident third | 0.923 vs 0.538 (gap 0.385) | 0.846 vs 0.538 (gap 0.308) | 0.846 vs 0.769 (gap 0.077) | MISSED |
 
 **Did it help, and how do I know:**
+
+It helped the original `opinion` problem. The improvement was partial, because `discussion` F1 fell to 0.200 in two seeds, the accuracy spread grew to 0.128 (above the 0.10 limit).
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
@@ -392,6 +398,8 @@ The gap means that there is some improvement in the model.
 learned:**
 
 <!-- Two sentences. Your confusion matrix is the evidence. -->
+
+After adding opinion examples, the model recognized all 15 held-out `opinion` posts in each seed, but called 8, 8, and 4 true `discussion` posts `opinion`; this boundary error aligns with the `discussion` F1 misses and the 0.128 accuracy spread, while confidence separation also missed in seed 2024. Next I would review and consistently relabel ambiguous `discussion`/`opinion` examples, then add balanced examples if needed
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
