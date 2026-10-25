@@ -1,0 +1,200 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 32,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 32,
+    "accuracy": 0.71875,
+    "f1_macro": 0.6278409090909091,
+    "per_label": {
+      "discussion": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 9
+      },
+      "information": {
+        "precision": 0.5,
+        "recall": 0.875,
+        "f1": 0.6363636363636364,
+        "support": 8
+      },
+      "opinion": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 8
+      },
+      "stats and analytics": {
+        "precision": 0.7777777777777778,
+        "recall": 1.0,
+        "f1": 0.8750000000000001,
+        "support": 7
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Brighton & Hove Albion pressing efficiency: Opponent Passes Allowed Per Defensive Action (PPDA) stands at 8.2, ranking 2nd in England and demonstrating elite tactical synchronization in stopping opposition build-up.",
+      "gold": "stats and analytics",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "Bukayo Saka creative output: Ranks 1st in the Premier League for expected assists (0.42 xA per 90) and open-play key pass creation, having delivered 84 accurate crosses into the danger zone this season.",
+      "gold": "stats and analytics",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "Official: Serie A governing body confirms new domestic broadcasting rights distribution framework for the 2026-2029 cycle. DAZN and Sky Italia retain primary live streaming and satellite packages, while a newly structured free-to-air weekly highlights package has been awarded to national broadcaster RAI starting from matchday one of the new season.",
+      "gold": "information",
+      "predicted": "information"
+    },
+    {
+      "text": "The winter transfer window should be permanently abolished because it allows mismanaged clubs to panic-buy and disrupts squad chemistry right in the middle of the competitive season.",
+      "gold": "opinion",
+      "predicted": "information"
+    },
+    {
+      "text": "Is second-ball winning capability the most underappreciated attribute in modern midfield battles? Everyone talks about passing range and dribbling flair, but teams that consistently win loose second balls in the middle third dictate the entire tempo and territorial dominance of a match.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "What are the tactical advantages of playing a left-footed center back on the right side of a back three? It opens up diagonal passing angles into the opposing winger that a right-footed defender simply cannot execute naturally under pressure.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Four years ago, Bordeaux were a Ligue 1 club. They had international players, a professional academy, a modern stadium and the commercial machinery that comes with belonging to France's top division.",
+      "gold": "opinion",
+      "predicted": "information"
+    },
+    {
+      "text": "Lamine Yamal is THE superstar of futbol, then they have half the world cup winning squad. If these are not superstars idk who is.",
+      "gold": "opinion",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "What are the best drills for U12 ball control under pressure?",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Should goal difference remain the primary tiebreaker in league tables or should direct head-to-head records take precedence? Head-to-head records reward direct performance against rivals, whereas goal difference encourages teams to run up large scores against relegation sides, leading to lopsided blowouts.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Premier League Financial Fair Play Audit: Independent commission releases full verdict regarding PSR compliance for the 2025/26 financial cycle. Two top-flight clubs have received formal warnings regarding allowable losses, while three other clubs successfully offset academy development expenditures and infrastructure investments to maintain compliance within the 105 million pound limit over the rolling three-year evaluation window.",
+      "gold": "information",
+      "predicted": "information"
+    },
+    {
+      "text": "Official AFC Disciplinary and Ethics Committee statement: Al-Hilal forward suspended for two AFC Champions League Elite fixtures following a direct red card for violent conduct during stoppage time of Tuesday's quarter-final clash in Riyadh.",
+      "gold": "information",
+      "predicted": "information"
+    },
+    {
+      "text": "Official: League board ratifies stadium lighting upgrade subsidy program.",
+      "gold": "information",
+      "predicted": "information"
+    },
+    {
+      "text": "William Saliba defensive metrics: Leads all Premier League central defenders in 1v1 isolation tackle success rate at 81.5% against opposition dribblers, while committing only 0.3 fouls per 90 minutes.",
+      "gold": "stats and analytics",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "What is the most effective way to break down a low-block 5-4-1 setup without exposing your central midfield to rapid transitions?",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "How can local non-league clubs attract younger fans away from big Premier League television broadcasts? With streaming services making every global match accessible from home, grassroots clubs are struggling to maintain local gate receipts unless they build unique community engagement programs.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "How much does pitch size and grass height actually dictate tactical execution? You often hear pundits talk about team style, but visiting teams frequently complain about opposition managers deliberately leaving grass long or narrowing touchlines to combat heavy possession teams. Does IFAB need to standardize strict pitch dimensions and grass length requirements across all professional divisions?",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Transfer window opening dates officially confirmed by FIFA transfer matching system.",
+      "gold": "information",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "Match preview and confirmed starting lineups released.",
+      "gold": "information",
+      "predicted": "information"
+    },
+    {
+      "text": "Should yellow card accumulators in continental tournaments be wiped out before the quarter-finals? Currently, players can miss a crucial European semi-final due to an accumulation of minor tactical yellow cards picked up weeks prior, which feels harsh for the spectacle of the game.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Official Transfer Confirmation: Borussia Dortmund announce the permanent acquisition of 19-year-old Dutch youth international winger from Eredivisie club Ajax for an undisclosed fee. The player has signed a four-year contract with an option for an additional season.",
+      "gold": "information",
+      "predicted": "information"
+    },
+    {
+      "text": "Yellow cards given to players for removing their shirt during an emotional last-minute winner celebration is one of the most anti-fun, sterile rules in professional sports. Let the players express genuine human emotion.",
+      "gold": "opinion",
+      "predicted": "information"
+    },
+    {
+      "text": "Official: Youth academy director steps down after five years in charge.",
+      "gold": "information",
+      "predicted": "information"
+    },
+    {
+      "text": "Penalty kick direction analytics: High-center shot placements hold a 94% success rate across top European leagues over the past 5 seasons, outperforming low-corner placements by over 12 percentage points.",
+      "gold": "stats and analytics",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "Lamine Yamal leading U21 statistical metrics across Europe's top leagues: 18 direct goal contributions (10 goals, 8 assists) while averaging 4.3 successful take-ons per 90 minutes in La Liga.",
+      "gold": "stats and analytics",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "I think prime Eden Hazard was more visually captivating to watch than almost any player in Premier League history.",
+      "gold": "opinion",
+      "predicted": "information"
+    },
+    {
+      "text": "I mean lack of opposition is relative. If you watched our Ligue 1 games you'd see that teams like, Lens, Lyon, Monaco and even Marseille give us trouble. I'd argue that mid table Ligue 1 is more competitive than mid table La liga or mid table Bundesliga. Last year we won the league by 6 points (less than Arsenal), got kicked out of the cup by Paris FC who just got promoted. This year we lost the troph\u00e9e des champions to Lens",
+      "gold": "opinion",
+      "predicted": "information"
+    },
+    {
+      "text": "Individual awards like the Ballon d'Or do far more harm than good to overall squad cohesion and team chemistry.",
+      "gold": "opinion",
+      "predicted": "information"
+    },
+    {
+      "text": "VAR hasn't ruined the game; poor refereeing standards, ego, and lack of transparent stadium audio have.",
+      "gold": "opinion",
+      "predicted": "information"
+    },
+    {
+      "text": "Distance covered: Jude Bellingham ran 12.4 km.",
+      "gold": "stats and analytics",
+      "predicted": "stats and analytics"
+    },
+    {
+      "text": "Is the expanding 32-team FIFA Club World Cup a welcome addition to the global football calendar or an unnecessary financial burden on player health and recovery cycles?",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "Comprehensive tactical & statistical breakdown of Arsenal's defensive block: Mikel Arteta's side currently allows the fewest Expected Goals against (xGA) per 90 minutes across Europe's top five leagues (0.68 xGA). Furthermore, they rank 1st in Premier League set-piece efficiency, scoring 18 goals from corners while permitting zero direct header attempts on their own target over the past 24 matchdays. Their Opponent Passes Per Defensive Action (PPDA) of 8.4 underscores one of the most aggressive high-pressing schemes in modern football.",
+      "gold": "stats and analytics",
+      "predicted": "stats and analytics"
+    }
+  ]
+}

@@ -56,9 +56,11 @@ and subjective claims.
 **Definition:** A neutral argument conveying certain news.
 
 **Example 1:**
+
 > “Anthony Taylor has been appointed as the chairman of the Central Referee Board of the Turkish Football Federation.”
 
 **Example 2:**
+
 > “Manchester City have been found guilty on all but one of the 115 charges, according to sources briefed on the matter.”
 
 ### `stats and analytics`
@@ -66,9 +68,11 @@ and subjective claims.
 **Definition:** Posts backed by facts, numbers and figures.
 
 **Example 1:**
+
 > “Harry Kane has now scored 102 goals in his first 100 Bundesliga appearances.”
 
 **Example 2:**
+
 > “Barcelona have won their first 9 LaLiga games for only the second time in competition history.”
 
 ### `discussion`
@@ -76,9 +80,11 @@ and subjective claims.
 **Definition:** Questions on a specific topic, looking for definite answers.
 
 **Example 1:**
+
 > “When did Ronaldo's form notably decline? Was it the Euros 2024?”
 
 **Example 2:**
+
 > “Would you rather your club loan a young player out or keep them training with the first team?”
 
 ### `opinion`
@@ -86,9 +92,11 @@ and subjective claims.
 **Definition:** A subjective claim with no direct evidence.
 
 **Example 1:**
+
 > “Upamecano is nowhere near Pacho and neither are Gabriel and Saliba.”
 
 **Example 2:**
+
 > “Lamine Yamal is THE superstar of futbol.”
 
 ### The hardest boundary
@@ -116,13 +124,13 @@ marked `pre-labelled, checked`.
 
 **Counts per label:**
 
-| Label | Count | Share |
-|---|---|---|
-| information | 52 | 24.8% |
-| stats and analytics | 49 | 23.3% |
-| discussion | 58 | 27.6% |
-| opinion | 51 | 24.3% |
-| **Total** | **210** | **100%** |
+| Label               | Count   | Share    |
+| ------------------- | ------- | -------- |
+| information         | 52      | 24.8%    |
+| stats and analytics | 49      | 23.3%    |
+| discussion          | 58      | 27.6%    |
+| opinion             | 51      | 24.3%    |
+| **Total**           | **210** | **100%** |
 
 **Three hard cases**
 
@@ -130,25 +138,28 @@ marked `pre-labelled, checked`.
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:* “Barcelona have won their first 9 LaLiga games for only the second time in competition history. Barcelona’s start to the 2026/27 LaLiga season: 9 games, 9 wins, 39 goals scored, 9 conceded.”
+
+> _The post:_ “Barcelona have won their first 9 LaLiga games for only the second time in competition history. Barcelona’s start to the 2026/27 LaLiga season: 9 games, 9 wins, 39 goals scored, 9 conceded.”
 >
-> *Could have been:* `information` or `stats and analytics`
+> _Could have been:_ `information` or `stats and analytics`
 >
-> *I chose, because:* `stats and analytics`; the record and figures are the main point.
+> _I chose, because:_ `stats and analytics`; the record and figures are the main point.
 
 **2.**
-> *The post:* “Would you rather your club loan a young player out or keep them training with the first team?”
+
+> _The post:_ “Would you rather your club loan a young player out or keep them training with the first team?”
 >
-> *Could have been:* `discussion` or `opinion`
+> _Could have been:_ `discussion` or `opinion`
 >
-> *I chose, because:* It asks readers to answer a specific question, so I labelled it `discussion`.
+> _I chose, because:_ It asks readers to answer a specific question, so I labelled it `discussion`.
 
 **3.**
-> *The post:* “Lamine Yamal is THE superstar of futbol, then they have half the world cup winning squad.”
+
+> _The post:_ “Lamine Yamal is THE superstar of futbol, then they have half the world cup winning squad.”
 >
-> *Could have been:* `opinion` or `information`
+> _Could have been:_ `opinion` or `information`
 >
-> *I chose, because:* It is a subjective evaluation without evidence, so I labelled it `opinion`.
+> _I chose, because:_ It is a subjective evaluation without evidence, so I labelled it `opinion`.
 
 ---
 
@@ -169,8 +180,6 @@ validation, and test splits. The saved test split has 32 posts: 8
 The `stats and analytics` test group has fewer than 8 examples, so its score
 may vary more from run to run.
 
-
-
 ---
 
 ## How I Used AI
@@ -184,18 +193,18 @@ may vary more from run to run.
 
 **Moment 1**
 
-- *What I asked for:* Fill the note field in `labels.csv` with `pre-labelled, checked` for the posts other than manually labeled.
-- *What came back:* The CSV notes were updated to follow that instruction;
+- _What I asked for:_ Fill the note field in `labels.csv` with `pre-labelled, checked` for the posts other than manually labeled.
+- _What came back:_ The CSV notes were updated to follow that instruction;
   the narratives and classifier labels were kept as provided.
-- *What I changed:* I reviewed the note counts and kept the requested split:
+- _What I changed:_ I reviewed the note counts and kept the requested split:
   33 `cold` and 177 `pre-labelled, checked`.
 
 **Moment 2**
 
-- *What I asked for:* format  the README using the files already in
+- _What I asked for:_ format the README using the files already in
   the project, while preserving its existing structure and most of its text.
-- *What came back:* A well structured readme.
-- *What I changed:* Manully formatted the tables for better structure.
+- _What came back:_ A well structured readme.
+- _What I changed:_ Manully formatted the tables for better structure.
 
 **Pre-labelling disclosure:** The notes record 33 posts as `cold` and 177 as
 `pre-labelled, checked`. AI helped apply these note values at my direction;
@@ -213,22 +222,24 @@ it did not create the narratives or choose their classifier labels.
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
-| Measure | Baseline | Trained | Difference |
-|---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Measure                    | Baseline | Trained | Difference |
+| -------------------------- | -------- | ------- | ---------- |
+| Overall accuracy           | 0.719    | 0.750   | +0.031     |
+| Macro F1                   | 0.628    | 0.698   | +0.070     |
+| F1 — `discussion`          | 1.000    | 0.696   | -0.304     |
+| F1 — `information`         | 0.636    | 0.941   | +0.305     |
+| F1 — `opinion`             | 0.000    | 0.222   | +0.222     |
+| F1 — `stats and analytics` | 0.875    | 0.933   | +0.058     |
 
 **What I predicted before I looked:**
+
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
 
 **What the gap actually means:**
+
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-
-
 
 ---
 
@@ -238,30 +249,32 @@ it did not create the narratives or choose their classifier labels.
      spread table; the Target and Verdict columns are yours. -->
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| --------- | ------ | ------- | ------ | --------- | ------- |
+| 1.        |        |         |        |           |         |
+| 2.        |        |         |        |           |         |
+| 3.        |        |         |        |           |         |
+| 4.        |        |         |        |           |         |
+| 5.        |        |         |        |           |         |
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted        | information | stats and analytics | discussion | opinion |
+| ----------------------- | ----------- | ------------------- | ---------- | ------- |
+| **information**         | 8           | 0                   | 0          | 0       |
+| **stats and analytics** | 0           | 7                   | 0          | 0       |
+| **discussion**          | 0           | 1                   | 8          | 0       |
+| **opinion**             | 1           | 0                   | 6          | 1       |
 
 **My biggest off-diagonal number, and what it means:**
+
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
 
-
+6 real `opinion` posts were called `discussion` and 0 real `discussion` posts were called `opinion` which means the model is misclassifying the real `opinions` classifier.
 
 ---
 
@@ -270,13 +283,13 @@ it did not create the narratives or choose their classifier labels.
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
-| # | Criterion | Target | Verdict | How I decided |
-|---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| #   | Criterion | Target | Verdict | How I decided |
+| --- | --------- | ------ | ------- | ------------- |
+| 1   |           |        |         |               |
+| 2   |           |        |         |               |
+| 3   |           |        |         |               |
+| 4   |           |        |         |               |
+| 5   |           |        |         |               |
 
 **Diagnoses**
 
@@ -289,8 +302,6 @@ it did not create the narratives or choose their classifier labels.
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
-
-
 ---
 
 ## Agreement Report
@@ -301,7 +312,7 @@ it did not create the narratives or choose their classifier labels.
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** **_ / 30 = _**%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -324,26 +335,26 @@ it did not create the narratives or choose their classifier labels.
      what you did across your own 200. -->
 
 **1.**
-> *The post:*
+
+> _The post:_
 >
-> *Staff said / I said:*
+> _Staff said / I said:_
 >
-> *My call, and why:*
+> _My call, and why:_
 >
-> *Which pile:*
+> _Which pile:_
 
 **2.**
-> *The post:*
+
+> _The post:_
 >
-> *Staff said / I said:*
+> _Staff said / I said:_
 >
-> *My call, and why:*
+> _My call, and why:_
 >
-> *Which pile:*
+> _Which pile:_
 
 **What the pattern in my disagreements tells me:**
-
-
 
 ---
 
@@ -356,19 +367,17 @@ it did not create the narratives or choose their classifier labels.
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| --------- | ------ | ------- | ------ | --------- | ------- |
+| 1.        |        |         |        |           |         |
+| 2.        |        |         |        |           |         |
+| 3.        |        |         |        |           |         |
+| 4.        |        |         |        |           |         |
+| 5.        |        |         |        |           |         |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
-
-
 
 ---
 
@@ -376,13 +385,10 @@ it did not create the narratives or choose their classifier labels.
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-
-
 **The gap between what I meant my labels to capture and what the model
 learned:**
+
 <!-- Two sentences. Your confusion matrix is the evidence. -->
-
-
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
