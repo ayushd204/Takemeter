@@ -383,7 +383,7 @@ The before-run diagnosis showed that `opinion` had only 51 training examples and
 
 **Did it help, and how do I know:**
 
-It helped the original `opinion` problem. The improvement was partial, because `discussion` F1 fell to 0.200 in two seeds, the accuracy spread grew to 0.128 (above the 0.10 limit).
+It helped the original `opinion` problem. The improvement was partial, because `discussion` F1 fell to 0.200 in two seeds, the accuracy spread grew to 0.128 which is above the 0.10 limit.
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
