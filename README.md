@@ -108,19 +108,21 @@ announces an event or development.
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:** Multiple subreddit communities like r/football,r/SpicyFootballTakes,r/Referees.
+**Where the posts came from:** The subreddits `r/football`,
+`r/SpicyFootballTakes`, and `r/Referees` and so on.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:** The file contains 33 posts marked `cold` and 177
+marked `pre-labelled, checked`.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| information | 52 | 24.8% |
+| stats and analytics | 49 | 23.3% |
+| discussion | 58 | 27.6% |
+| opinion | 51 | 24.3% |
+| **Total** | **210** | **100%** |
 
 **Three hard cases**
 
